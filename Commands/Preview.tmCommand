@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>changed</key>
+	<dict>
+		<key>beforeRunningCommand</key>
+		<string>saveActiveFile</string>
+		<key>command</key>
+		<string>#!/bin/bash
+
+# [[ -f "${TM_SUPPORT_PATH}/lib/bash_init.sh" ]] &amp;&amp; . "${TM_SUPPORT_PATH}/lib/bash_init.sh"
+
+# . "$TM_SUPPORT_PATH/lib/webpreview.sh"
+# html_header "Markdown Preview" "${TM_FILENAME:-}"
+
+if [[ -f "$TM_FILEPATH" ]]; then
+  echo "&lt;base href='file://${TM_FILEPATH// /%20}'&gt;"
+fi
+
+$SCILAB/scripts/preview_scholdoc.sh "${TM_FILEPATH}" "${TM_SCHOLDOC}" 
+
+</string>
+		<key>inputFormat</key>
+		<string>text</string>
+		<key>keyEquivalent</key>
+		<string>@S</string>
+		<key>outputCaret</key>
+		<string>afterOutput</string>
+		<key>outputFormat</key>
+		<string>html</string>
+		<key>outputLocation</key>
+		<string>newWindow</string>
+		<key>version</key>
+		<integer>2</integer>
+	</dict>
+	<key>deleted</key>
+	<array>
+		<string>output</string>
+	</array>
+	<key>isDelta</key>
+	<true/>
+	<key>uuid</key>
+	<string>B52DEA16-8480-11D9-BE59-000D93B3A10E</string>
+</dict>
+</plist>

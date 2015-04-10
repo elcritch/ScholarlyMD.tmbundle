@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>saveActiveFile</string>
+	<key>command</key>
+	<string>#!/bin/bash
+
+# [[ -f "${TM_SUPPORT_PATH}/lib/bash_init.sh" ]] &amp;&amp; . "${TM_SUPPORT_PATH}/lib/bash_init.sh"
+
+# . "$TM_SUPPORT_PATH/lib/webpreview.sh"
+# html_header "Markdown Preview" "${TM_FILENAME:-}"
+#
+# if [[ -f "$TM_FILEPATH" ]]; then
+#   echo "&lt;base href='file://${TM_FILEPATH// /%20}'&gt;"
+# fi
+
+$SCILAB/scripts/process_scholdoc.sh "${TM_FILEPATH}" "${TM_SCHOLDOC}" 
+
+</string>
+	<key>input</key>
+	<string>document</string>
+	<key>inputFormat</key>
+	<string>text</string>
+	<key>keyEquivalent</key>
+	<string>@p</string>
+	<key>name</key>
+	<string>Generate PDF</string>
+	<key>outputCaret</key>
+	<string>afterOutput</string>
+	<key>outputFormat</key>
+	<string>html</string>
+	<key>outputLocation</key>
+	<string>newWindow</string>
+	<key>scope</key>
+	<string>text.html.markdown</string>
+	<key>uuid</key>
+	<string>15CD4E72-636F-45F9-BBED-4FCF8E8E8EEA</string>
+	<key>version</key>
+	<integer>2</integer>
+</dict>
+</plist>
